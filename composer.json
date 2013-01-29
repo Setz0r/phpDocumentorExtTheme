@@ -1,0 +1,13 @@
+{
+    "name": "phpdocumentor/template-ext-theme",
+    "type": "phpdocumentor-template",
+    "description": "Theme to resemble ExtJS 3.4 API Documentation for phpDocumentor",
+    "keywords": ["documentation", "template", "phpdoc"],
+    "homepage": "http://www.jovianlabs.org",
+    "license": "MIT",
+    "require": {
+        "ext-xsl": "*",
+        "phpdocumentor/unified-asset-installer": "1.*",
+        "phpdocumentor/template-abstract": "1.*"
+    }
+}

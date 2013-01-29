@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template>
+  <author>Aaron Snyder</author>
+  <email>aaron.snyder@hki.com</email>
+  <version>1.7.x</version>
+  <copyright>Mike van Riel / Naenius 2012</copyright>
+  <description>This is the ExtJS 3.4 look and feel for phpDocumentor</description>
+  <dependencies>
+      <template name="abstract" version="1.0.3" />
+  </dependencies>
+  <transformations>
+    <transformation query="copy" writer="FileIo" source="../data/images" artifact="images"/>
+    <transformation query="copy" writer="FileIo" source="../data/js" artifact="js"/>
+    <transformation query="copy" writer="FileIo" source="../data/syntax_highlighter" artifact="syntax_highlighter"/>
+    <transformation query="copy" writer="FileIo" source="templates/abstract/images" artifact="images"/>
+    <transformation query="copy" writer="FileIo" source="templates/abstract/css" artifact="css"/>
+    <transformation query="copy" writer="FileIo" source="templates/ext-theme/welcome.html" artifact="welcome.html"/>
+    <transformation query="copy" writer="FileIo" source="templates/ext-theme/css" artifact="css"/>
+    <transformation query="copy" writer="FileIo" source="templates/ext-theme/js" artifact="js"/>
+    <transformation query="copy" writer="FileIo" source="templates/ext-theme/resources" artifact="resources"/>
+    <!--<transformation query="copy" writer="FileIo" source="templates/ext-theme/output" artifact="output"/>-->
+    <transformation query="" writer="Search" source="" artifact="."/>
+    <transformation query="" writer="xsl" source="templates/ext-theme/index.xsl" artifact="index.html"/>
+    <transformation query="" writer="xsl" source="templates/ext-theme/sidebar.xsl" artifact="treedata.js">
+        <parameters>
+            <variables>
+                <section.dashboard.show>false</section.dashboard.show>
+                <section.api.show/>
+                <section.namespaces.show/>
+                <section.packages.show/>
+                <section.files.show/>
+                <section.files.show-elements/>
+                <section.reports.show />
+                <section.charts.show />
+            </variables>
+        </parameters>
+    </transformation>
+    <transformation query="" writer="xsl" source="templates/ext-theme/icondata.xsl" artifact="icondata.js"/>
+    <transformation query="/project/file/@path" writer="xsl" source="templates/ext-theme/api-doc.xsl" artifact="files/{$path}"/>
+    <transformation query="" writer="xsl" source="templates/abstract/report_markers.xsl" artifact="report_markers.html"/>
+    <transformation query="" writer="xsl" source="templates/abstract/report_parse_markers.xsl" artifact="report_parse_markers.html"/>
+    <transformation query="" writer="xsl" source="templates/abstract/report_deprecated.xsl" artifact="report_deprecated.html"/>
+    <transformation query="" writer="sourcecode" source="" artifact=""/>
+    <transformation query="" writer="Graph" source="Class" artifact="classes.svg" />
+  </transformations>
+</template>
