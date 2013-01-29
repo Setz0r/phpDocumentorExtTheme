@@ -1,0 +1,1 @@
+phpDocumentor themes kinda suck.  They're flat and not very attractive.  This theme looks and functions like the API documentation for ExtJS 3.4.
